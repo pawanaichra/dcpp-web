@@ -1,7 +1,7 @@
 socketId="";
 function ab2str(buf) {
 	var decoder = new TextDecoder("utf-8");
-  	return decoder.decode(new Uint8Array(data));
+  	return decoder.decode(new Uint8Array(buf));
 }
 function str2ab(str) {
   var buf = new ArrayBuffer(str.length*2); // 2 bytes for each char
@@ -25,6 +25,7 @@ function onConnectedCallback(resultCode){
 		console.log("connected");
 	}
 	chrome.sockets.tcp.onReceive.addListener(function(info) {
+	  console.log(ab2str(info.data));
 	  sendHub("Supports UserCommand NoGetINFO NoHello UserIP2 TTHSearch ZPipe0");
 	  sendHub("Key "+lockMsgToKey(ab2str(info.data)));
 	  sendHub("ValidateNick temp");
@@ -90,7 +91,8 @@ function lockMsgToKey(lockMsg){
 		else
 			result.push((k));
 	}
-	var r = Int16Array.from(result)
+	var r = Int16Array.from(result);
+	console.log(r);
 	return ab2str(r);
 }
 
