@@ -1,0 +1,21 @@
+{
+  "manifest_version": 2,
+  "name": "DC++ web",
+  "description": "Extention to use DC++ from chrome, its easy and platform independent",
+  "version": "0.1",
+  "icons": {
+    "128": "img/logo.png"
+  },
+  "minimum_chrome_version": "33.0.1715.0",
+  "permissions": ["webview", "system.network"],
+  "app": {
+    "background": {
+      "scripts": ["js/background.js"]
+    }
+  },
+  "sockets": {
+    "tcp": {
+      "connect": ""
+    }
+  }
+}
