@@ -108,7 +108,11 @@ function lockMsgToKey(lockMsg){
 
 document.addEventListener('DOMContentLoaded', function () {
   document.querySelector('#connect-btn').addEventListener('click', connect);
-  document.querySelector('#clear').addEventListener('click', function(){
+  document.querySelector('#clear-btn').addEventListener('click', function(){
   	document.getElementById("results").innerHTML="";
+  });
+  document.querySelector('#search-btn').addEventListener('click', function(){
+  	var query = document.getElementById("search-input").value;
+  	sendHub("Search "+udpSocket.myIP+":"+udpSocket.port+" F?T?0?1?"+query);
   });
 });
