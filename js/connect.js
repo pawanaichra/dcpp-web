@@ -25,8 +25,8 @@ function proceed(data){
 	  sendHub("Key "+lockMsgToKey(ab2str(data)));
 	  sendHub("ValidateNick temp");
 	  sendHub("MyPass temp");
-	  sendHub("Version 1,0091");
-	  sendHub("GetNickList");
+	  // sendHub("Version 1,0091");
+	  // sendHub("GetNickList");
 	  sendHub("MyINFO $ALL temp <++ V:0.867,M:A,H:0/1/0,S:3>$ $1000$$0$");
 }
 
@@ -108,4 +108,7 @@ function lockMsgToKey(lockMsg){
 
 document.addEventListener('DOMContentLoaded', function () {
   document.querySelector('#connect-btn').addEventListener('click', connect);
+  document.querySelector('#clear').addEventListener('click', function(){
+  	document.getElementById("results").innerHTML="";
+  });
 });
