@@ -16,6 +16,13 @@
   "sockets": {
     "tcp": {
       "connect": ""
+    },
+    "tcpServer": {
+      "listen": ""
+    },
+    "udp": {
+      "send": "",
+      "bind": ""
     }
   }
 }
